@@ -11,6 +11,8 @@
 class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         int first = -1;
         int diff = 100001;
         int last = -1;
