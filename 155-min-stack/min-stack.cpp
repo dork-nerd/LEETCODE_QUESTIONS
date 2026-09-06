@@ -1,32 +1,30 @@
 class MinStack {
 public:
-    int arr[30000];
-    int mini[30000];
-    int start=-1;
-    int start2=-1;
+    vector<int> arr;
+    vector<int> mini;
     MinStack() {
         
     }
     
     void push(int value) {
-        arr[++start] = value;
-        if(start2==-1) mini[++start2] = value;
-        else if(value<=mini[start2]) mini[++start2] = value; 
+        arr.push_back(value);
+        if(mini.empty()) mini.push_back(value);
+        else if(value<=mini.back()) mini.push_back(value);
     }
     
     void pop() {
-        if(arr[start]==mini[start2]){
-            start2--;
+        if(arr.back()==mini.back()){
+            mini.pop_back();
         }
-        start--;
+        arr.pop_back();
     }
     
     int top() {
-        return arr[start];
+        return arr.back();
     }
     
     int getMin() {
-        return mini[start2];
+        return mini.back();
     }
 };
 
