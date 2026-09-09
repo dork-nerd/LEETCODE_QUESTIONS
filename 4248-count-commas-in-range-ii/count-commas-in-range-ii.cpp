@@ -1,6 +1,8 @@
 class Solution {
 public:
     long long countCommas(long long n) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
         long long count = 0;
         long long commacount = 0;
         long long div = 1000;
