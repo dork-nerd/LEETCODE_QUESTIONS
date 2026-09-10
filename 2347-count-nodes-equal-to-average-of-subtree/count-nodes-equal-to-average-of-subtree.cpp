@@ -14,8 +14,8 @@ public:
     int totalcount = 0;
     vector<int> avg(TreeNode* root){
         if(root==nullptr) return {0,0};
-        vector<int> left = avg(root->left);
-        vector<int> right = avg(root->right);
+        auto left = avg(root->left);
+        auto right = avg(root->right);
         int sum = root->val + left[0] + right[0];
         int count = left[1] + right[1] + 1;
         if(root->val==sum/count) totalcount++;
