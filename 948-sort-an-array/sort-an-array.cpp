@@ -2,8 +2,8 @@ class Solution {
 public:
     void merge(vector<int> &vec,int l,int r){
         vector<int> ans(r-l+1);
-        int st1 = l;
         int mid = l+(r-l)/2;
+        int st1 = l;
         int st2 = mid+1;
         int k = 0;
         while(st1<=mid && st2<=r){
